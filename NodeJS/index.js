@@ -1,10 +1,12 @@
 const expreess = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
 const app = expreess();
 app.use(bodyParser.json());
+app.use(cors({ origin: 'http://localhost:4200' }));
 
 var employeeController = require('./controllers/employeeController');
 
